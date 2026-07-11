@@ -18,6 +18,16 @@ export default function CtaBanner({ locale }: CtaBannerProps) {
       {/* Extreme back glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] gold-glow-radial opacity-30 pointer-events-none"></div>
 
+      {/* Real garment bag photo, subtle background texture */}
+      <div
+        className="absolute inset-0 opacity-[0.13]"
+        style={{
+          backgroundImage: "url('/images/cta-garment-bag.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center 20%",
+        }}
+      ></div>
+
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         <span className="text-xs uppercase tracking-[0.3em] text-gold font-bold">
           {locale === "ar" ? "أرقى عناية بملابسك" : "ELEVATE YOUR WARDROBE EXPERIENCE"}

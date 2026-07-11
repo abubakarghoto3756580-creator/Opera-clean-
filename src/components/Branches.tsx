@@ -29,6 +29,16 @@ export default function Branches({ locale }: BranchesProps) {
           </p>
         </div>
 
+        {/* Real branded counter photo */}
+        <div className="relative rounded-[24px] overflow-hidden mb-16 max-w-4xl mx-auto border border-white/10">
+          <img
+            src="/images/branded-counter.jpg"
+            alt="Opera Clean branded counter and garment display"
+            className="w-full h-56 sm:h-72 object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/60 via-transparent to-transparent"></div>
+        </div>
+
         {/* 4 Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {BRANCHES_DATA.map((branch, index) => (

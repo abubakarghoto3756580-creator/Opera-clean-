@@ -96,7 +96,7 @@ export default function BeforeAfter({ locale }: BeforeAfterProps) {
           {/* AFTER (Clean - Background) */}
           <div className="absolute inset-0 w-full h-full">
             <img
-              src="https://images.unsplash.com/photo-1545127398-14699f92334b?auto=format&fit=crop&w=1200&q=80"
+              src="/images/blazer-sleeve-a.jpg"
               alt="Pristine luxury clothing"
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover select-none pointer-events-none brightness-105"
@@ -115,7 +115,7 @@ export default function BeforeAfter({ locale }: BeforeAfterProps) {
             {/* We duplicate the same image, but apply custom CSS filters to represent 'dirty/stained' */}
             <div className="absolute top-0 left-0 w-[100vw] h-full" style={{ width: containerRef.current?.getBoundingClientRect().width || "100%" }}>
               <img
-                src="https://images.unsplash.com/photo-1545127398-14699f92334b?auto=format&fit=crop&w=1200&q=80"
+                src="/images/blazer-sleeve-a.jpg"
                 alt="Stained luxury clothing"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover select-none pointer-events-none saturate-50 brightness-75 contrast-125 sepia-[30%]"

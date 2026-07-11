@@ -24,6 +24,18 @@ export default function Hero({ locale }: HeroProps) {
       id="hero"
       className="relative min-h-screen flex items-center justify-center bg-[#111111] overflow-hidden pt-20"
     >
+      {/* Background: luxury showroom video, subtly dimmed so foreground text stays legible */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover opacity-25"
+        src="/videos/hero-showroom.mp4"
+        poster="/images/showroom-lifestyle.jpg"
+        autoPlay
+        muted
+        loop
+        playsInline
+      />
+      <div className="absolute inset-0 bg-[#111111]/70"></div>
+
       {/* Background elegant grid pattern */}
       <div className="absolute inset-0 bg-premium-grid opacity-30 pointer-events-none"></div>
 

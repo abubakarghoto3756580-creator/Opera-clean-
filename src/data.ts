@@ -131,7 +131,7 @@ export const SERVICES_ITEMS: ServiceItem[] = [
     titleEn: "Luxury Dry Cleaning",
     descAr: "أرقى تقنيات إزالة الأوساخ والمحافظة على النسيج للبدل الرسمية والأزياء الراقية.",
     descEn: "Superior bespoke care for formal tailoring, tailored blazers, and luxury silks.",
-    imageUrl: "https://images.unsplash.com/photo-1545127398-14699f92334b?auto=format&fit=crop&w=600&q=80",
+    imageUrl: "/images/service-dry-cleaning.jpg",
     iconName: "Sparkles"
   },
   {
@@ -140,7 +140,7 @@ export const SERVICES_ITEMS: ServiceItem[] = [
     titleEn: "Casual & Special Attire",
     descAr: "غسيل، كوي، وتعطير برائحة فرنسية فاخرة لملابسك اليومية ومقتنياتك المفضلة.",
     descEn: "Premium washing, crisp ironing, and french misting for everyday and luxury casualwear.",
-    imageUrl: "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=600&q=80",
+    imageUrl: "/images/service-casual.jpg",
     iconName: "Shirt"
   },
   {
@@ -149,7 +149,7 @@ export const SERVICES_ITEMS: ServiceItem[] = [
     titleEn: "Wedding & Evening Gowns",
     descAr: "عناية فائقة ومفصلة لفساتين الأفراح مع تطريزاتها الحساسة باستخدام تقنيات آمنة كلياً.",
     descEn: "Meticulous detail cleaning and preserving for gowns, lace, beads, and wedding couture.",
-    imageUrl: "https://images.unsplash.com/photo-1594552072238-b8a33785b261?auto=format&fit=crop&w=600&q=80",
+    imageUrl: "/images/service-wedding.jpg",
     iconName: "Crown"
   },
   {
@@ -158,7 +158,7 @@ export const SERVICES_ITEMS: ServiceItem[] = [
     titleEn: "Premium Abaya & Jalabiya Care",
     descAr: "غسيل مخصص للعبايات يحافظ على سوادها الداكن، ولمعان الكريستال والتطريز اليدوي.",
     descEn: "Specialized formula washing to prevent black fading and maintain delicate stone embellishments.",
-    imageUrl: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=600&q=80",
+    imageUrl: "/images/service-abaya.jpg",
     iconName: "Heart"
   },
   {
@@ -167,7 +167,7 @@ export const SERVICES_ITEMS: ServiceItem[] = [
     titleEn: "Curtains & Premium Drapery",
     descAr: "إزالة الغبار والأتربة عن الستائر الثقيلة والخفيفة مع الكوي بالبخار وهي معلقة في مكانها.",
     descEn: "Deep allergen and dust extraction for drapes, followed by vertical steam pressing.",
-    imageUrl: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80",
+    imageUrl: "/images/service-curtains.jpg",
     iconName: "Scissors"
   },
   {
@@ -176,7 +176,7 @@ export const SERVICES_ITEMS: ServiceItem[] = [
     titleEn: "Express Laundry & Fragrance",
     descAr: "خدمة مستعجلة للغسيل والكي والتعطير بأرقى الروائح الفواحة خلال ساعات معدودة.",
     descEn: "Supercharged wash, perfect alignment press, and signature custom misting on short notice.",
-    imageUrl: "https://images.unsplash.com/photo-1604335399105-a0c5e5fd90d1?auto=format&fit=crop&w=600&q=80",
+    imageUrl: "/images/service-express-fragrance.jpg",
     iconName: "Flame"
   },
   {
@@ -185,7 +185,7 @@ export const SERVICES_ITEMS: ServiceItem[] = [
     titleEn: "Advanced Stain Extraction",
     descAr: "معالجة دقيقة لبقع القهوة، الدهون، الحبر، والمكياج دون التأثير على جودة القماش.",
     descEn: "Chemical-free targeted treatment for oil, coffee, makeup, and ink on delicate textiles.",
-    imageUrl: "https://images.unsplash.com/photo-1582735689369-4fe89db7114c?auto=format&fit=crop&w=600&q=80",
+    imageUrl: "/images/service-stain-removal.jpg",
     iconName: "Droplet"
   },
   {
@@ -194,7 +194,7 @@ export const SERVICES_ITEMS: ServiceItem[] = [
     titleEn: "Artisanal Carpet Cleaning",
     descAr: "غسيل عميق وتعقيم للسجاد بكافة أحجامه لإزالة الجراثيم والبقع مع حماية أليافه.",
     descEn: "Deep micro-shampoo treatment, sanitizing, and spinning for delicate wool and Persian rugs.",
-    imageUrl: "https://images.unsplash.com/photo-1558317374-067fb5f30001?auto=format&fit=crop&w=600&q=80",
+    imageUrl: "/images/service-carpet.jpg",
     iconName: "Grid"
   }
 ];

@@ -65,15 +65,10 @@ export default function Services({ locale }: ServicesProps) {
                 <span className="absolute top-4 right-4 bg-black/60 backdrop-blur-md border border-white/10 text-white/90 text-[10px] uppercase font-semibold tracking-wider px-3 py-1.5 rounded-full">
                   {locale === "ar" ? "عناية خاصة" : "PREMIUM"}
                 </span>
-
-                {/* Absolute Bottom floating dynamic icon */}
-                <div className="absolute -bottom-4 left-6 w-11 h-11 rounded-full bg-gold flex items-center justify-center text-black shadow-lg border border-gold/40">
-                  <Icon name={item.iconName} size={18} />
-                </div>
               </div>
 
               {/* Card Body */}
-              <div className="p-6 pt-8 flex flex-col flex-grow justify-between">
+              <div className="p-6 pt-6 flex flex-col flex-grow justify-between">
                 <div>
                   <h3 className="text-lg sm:text-xl font-display font-bold text-white group-hover:text-gold transition-colors duration-300">
                     {locale === "ar" ? item.titleAr : item.titleEn}

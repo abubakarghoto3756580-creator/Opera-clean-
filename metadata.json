@@ -1,0 +1,6 @@
+{
+  "name": "Opera Clean",
+  "description": "Premium luxury laundry and dry cleaning service in Kuwait with dual English and Arabic support.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

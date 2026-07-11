@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Tajawal", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Sora", "Manrope", "Cairo", sans-serif;
+  --color-gold: #C6A86A;
+  --color-matte: #111111;
+  --color-charcoal: #1D1D1D;
+  --color-gold-hover: #D7BE82;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #111111;
+}
+::-webkit-scrollbar-thumb {
+  background: #C6A86A33;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C6A86A66;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #111111;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(198, 168, 106, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(198, 168, 106, 0.45);
+  }
+}
+
+.pulse-glow-gold {
+  animation: pulse-glow 3s infinite;
+}
+
+@keyframes pulse-glow-green {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(34, 197, 94, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 22px rgba(34, 197, 94, 0.5);
+  }
+}
+
+.pulse-glow-green {
+  animation: pulse-glow-green 2s infinite;
+}
+
+/* Premium radial backdrop glow */
+.gold-glow-radial {
+  background: radial-gradient(circle at 50% 50%, rgba(198, 168, 106, 0.08) 0%, transparent 70%);
+}
+
+.bg-premium-grid {
+  background-size: 60px 60px;
+  background-image: 
+    linear-gradient(to right, rgba(198, 168, 106, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(198, 168, 106, 0.02) 1px, transparent 1px);
+}
+

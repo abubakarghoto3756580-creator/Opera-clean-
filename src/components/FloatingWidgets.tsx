@@ -1,7 +1,6 @@
 import React from "react";
 import { Language } from "../types";
 import { TRANSLATIONS } from "../data";
-import Icon from "./Icon";
 
 interface FloatingWidgetsProps {
   locale: Language;
@@ -12,8 +11,8 @@ export default function FloatingWidgets({ locale }: FloatingWidgetsProps) {
 
   return (
     <>
-      {/* 1. FLOATING WHATSAPP BUTTON (Visible on desktop / hidden or adjusted on mobile to prevent blocking sticky bar) */}
-      <div className="fixed bottom-24 right-6 md:bottom-8 md:right-8 z-40">
+      {/* Single floating WhatsApp button — always accessible while scrolling, all screen sizes */}
+      <div className="fixed bottom-6 right-6 z-40">
         <a
           href="https://wa.me/96591102095"
           target="_blank"
@@ -23,7 +22,7 @@ export default function FloatingWidgets({ locale }: FloatingWidgetsProps) {
         >
           {/* Animated pulsing rings */}
           <span className="absolute inset-0 rounded-full bg-emerald-500 opacity-75 animate-ping" style={{ animationDuration: "2s" }}></span>
-          
+
           {/* Main logo icon */}
           <svg
             className="w-8 h-8 relative z-10"
@@ -38,29 +37,6 @@ export default function FloatingWidgets({ locale }: FloatingWidgetsProps) {
           <span className="absolute right-16 top-1/2 -translate-y-1/2 bg-[#1A1A1A]/95 text-white text-xs font-bold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none border border-gold/10 whitespace-nowrap">
             {t.whatsappPulseText}
           </span>
-        </a>
-      </div>
-
-      {/* 2. BOTTOM STICKY ACTION BAR FOR MOBILE DEVICES ONLY */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-[#111111]/90 backdrop-blur-md border-t border-gold/15 p-4 flex gap-4 shadow-2xl">
-        {/* Call Now Button */}
-        <a
-          href="tel:+96591102095"
-          className="flex-1 py-3.5 px-4 rounded-[14px] bg-white/5 border border-gold/30 hover:bg-gold/10 text-gold text-xs font-bold transition-all duration-300 flex items-center justify-center gap-2"
-        >
-          <Icon name="Phone" size={14} />
-          <span>{t.callNow}</span>
-        </a>
-
-        {/* Book Pickup Button */}
-        <a
-          href="https://wa.me/96591102095"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex-[2] py-3.5 px-4 rounded-[14px] bg-gold text-black text-xs font-extrabold transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-gold/10"
-        >
-          <Icon name="Smartphone" size={14} />
-          <span>{t.bookPickup}</span>
         </a>
       </div>
     </>

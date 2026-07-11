@@ -48,18 +48,18 @@ export default function Services({ locale }: ServicesProps) {
                 boxShadow: "0 15px 35px rgba(0,0,0,0.3)",
               }}
             >
-              {/* Image & Zoom Hover container */}
-              <div className="relative h-48 sm:h-52 overflow-hidden bg-black/40">
+              {/* Image container — sized closer to the source image's aspect ratio to avoid awkward cropping */}
+              <div className="relative h-56 sm:h-64 overflow-hidden bg-[#0a0a0a]">
                 <img
                   src={item.imageUrl}
                   alt={locale === "ar" ? item.titleAr : item.titleEn}
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 group-hover:brightness-95 brightness-90 filter"
+                  className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                   loading="lazy"
                 />
                 
-                {/* Overlay gradient mask */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1D1D1D] via-[#1D1D1D]/30 to-transparent"></div>
+                {/* Subtle bottom-only gradient mask, so the image itself stays bright and visible */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1D1D1D] via-transparent to-transparent h-1/3 mt-auto top-auto"></div>
 
                 {/* Corner floating luxury category badge */}
                 <span className="absolute top-4 right-4 bg-black/60 backdrop-blur-md border border-white/10 text-white/90 text-[10px] uppercase font-semibold tracking-wider px-3 py-1.5 rounded-full">

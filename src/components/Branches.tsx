@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "motion/react";
 import { Language } from "../types";
 import { TRANSLATIONS, BRANCHES_DATA } from "../data";
 import Icon from "./Icon";
@@ -17,7 +18,13 @@ export default function Branches({ locale }: BranchesProps) {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto mb-20"
+        >
           <span className="text-xs uppercase tracking-[0.25em] text-gold font-bold">
             {locale === "ar" ? "أقرب فرع إليك" : "PHYSICAL SHOWROOM PRESENCE"}
           </span>
@@ -27,24 +34,35 @@ export default function Branches({ locale }: BranchesProps) {
           <p className="text-gray-400 mt-4 text-sm sm:text-base font-sans">
             {t.branchesSubtitle}
           </p>
-        </div>
+        </motion.div>
 
         {/* Real branded counter photo */}
-        <div className="relative rounded-[24px] overflow-hidden mb-16 max-w-4xl mx-auto border border-white/10">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.97 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+          className="relative rounded-[24px] overflow-hidden mb-16 max-w-4xl mx-auto border border-white/10"
+        >
           <img
             src="/images/branded-counter.jpg"
             alt="Opera Clean branded counter and garment display"
             className="w-full h-56 sm:h-72 object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/60 via-transparent to-transparent"></div>
-        </div>
+        </motion.div>
 
         {/* 4 Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {BRANCHES_DATA.map((branch, index) => (
-            <div
+            <motion.div
               key={branch.id}
-              className="group bg-[#1D1D1D] rounded-[24px] overflow-hidden border border-white/5 hover:border-gold/30 transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5, delay: (index % 4) * 0.1 }}
+              whileHover={{ y: -8 }}
+              className="group bg-[#1D1D1D] rounded-[24px] overflow-hidden border border-white/5 hover:border-gold/30 transition-colors duration-500 flex flex-col justify-between"
               style={{
                 boxShadow: "0 15px 35px rgba(0,0,0,0.3)",
               }}
@@ -96,7 +114,7 @@ export default function Branches({ locale }: BranchesProps) {
                   </a>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 

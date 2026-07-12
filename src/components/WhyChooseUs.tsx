@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "motion/react";
 import { Language } from "../types";
 import { TRANSLATIONS, WHY_CHOOSE_US_ITEMS } from "../data";
 import Icon from "./Icon";
@@ -16,7 +17,13 @@ export default function WhyChooseUs({ locale }: WhyChooseUsProps) {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] gold-glow-radial pointer-events-none opacity-40"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto mb-16"
+        >
           <span className="text-xs uppercase tracking-[0.25em] text-gold font-bold">
             {locale === "ar" ? "لماذا أوبرا كلين" : "THE OPERA CLEAN STANDARD"}
           </span>
@@ -26,13 +33,18 @@ export default function WhyChooseUs({ locale }: WhyChooseUsProps) {
           <p className="text-gray-400 mt-4 text-sm sm:text-base font-sans">
             {t.whyChooseUsSubtitle}
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {WHY_CHOOSE_US_ITEMS.map((item, index) => (
-            <div
+            <motion.div
               key={item.id}
-              className="group relative p-8 bg-[#1D1D1D] hover:bg-[#222222] border border-white/5 hover:border-gold/30 rounded-[20px] transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5, delay: (index % 4) * 0.1 }}
+              whileHover={{ y: -8 }}
+              className="group relative p-8 bg-[#1D1D1D] hover:bg-[#222222] border border-white/5 hover:border-gold/30 rounded-[20px] transition-colors duration-500 flex flex-col justify-between"
               style={{
                 boxShadow: "0 10px 30px rgba(0,0,0,0.2)",
               }}
@@ -62,7 +74,7 @@ export default function WhyChooseUs({ locale }: WhyChooseUsProps) {
                 <span>OPERA 0{index + 1}</span>
                 <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-gold">★</span>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

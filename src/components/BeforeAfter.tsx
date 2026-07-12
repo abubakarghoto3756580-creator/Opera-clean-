@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { motion } from "motion/react";
 import { Language } from "../types";
 import { TRANSLATIONS } from "../data";
 import Icon from "./Icon";
@@ -71,7 +72,13 @@ export default function BeforeAfter({ locale }: BeforeAfterProps) {
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto mb-16"
+        >
           <span className="text-xs uppercase tracking-[0.25em] text-gold font-bold">
             {locale === "ar" ? "معجزة التنظيف الفاخر" : "FABRIC RESTORATION CASE STUDY"}
           </span>
@@ -81,10 +88,14 @@ export default function BeforeAfter({ locale }: BeforeAfterProps) {
           <p className="text-gray-400 mt-4 text-sm sm:text-base font-sans">
             {t.beforeAfterSubtitle}
           </p>
-        </div>
+        </motion.div>
 
         {/* Interactive Comparison Slider */}
-        <div
+        <motion.div
+          initial={{ opacity: 0, scale: 0.97 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
           ref={containerRef}
           className="relative h-[350px] sm:h-[450px] md:h-[500px] w-full rounded-[24px] overflow-hidden border border-white/10 cursor-ew-resize shadow-2xl"
           onMouseMove={handleMouseMove}
@@ -147,7 +158,7 @@ export default function BeforeAfter({ locale }: BeforeAfterProps) {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Interactive Prompt Hint */}
         <div className="flex items-center justify-center gap-2 mt-6 text-xs text-gray-500 font-medium">

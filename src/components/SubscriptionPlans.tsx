@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "motion/react";
 import { Language } from "../types";
 import { TRANSLATIONS, SUBSCRIPTION_PLANS } from "../data";
 import Icon from "./Icon";
@@ -101,7 +102,13 @@ export default function SubscriptionPlans({ locale }: SubscriptionPlansProps) {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto mb-20"
+        >
           <span className="text-xs uppercase tracking-[0.25em] text-gold font-bold">
             {locale === "ar" ? "اشتراكات النخبة" : "MEMBERSHIP ECONOMIES OF COUTURE"}
           </span>
@@ -111,24 +118,32 @@ export default function SubscriptionPlans({ locale }: SubscriptionPlansProps) {
           <p className="text-gray-400 mt-4 text-sm sm:text-base font-sans">
             {t.subscriptionSubtitle}
           </p>
-        </div>
+        </motion.div>
 
         {/* Pricing Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch">
-          {SUBSCRIPTION_PLANS.map((plan) => {
+          {SUBSCRIPTION_PLANS.map((plan, index) => {
             const details = getPlanDetails(plan);
             const title = locale === "ar" ? details.titleAr : details.titleEn;
             const features = locale === "ar" ? details.featuresAr : details.featuresEn;
 
             return (
-              <div
+              <motion.div
                 key={plan.id}
-                className={`group relative rounded-[24px] p-8 flex flex-col justify-between transition-all duration-500 hover:-translate-y-2 border ${
-                  plan.isBestValue
-                    ? "bg-[#1E1C18] border-gold shadow-xl shadow-gold/10 scale-105"
-                    : "bg-[#1D1D1D] border-white/5 hover:border-gold/30 shadow-lg"
-                }`}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -8 }}
+                className="h-full"
               >
+                <div
+                  className={`group relative h-full rounded-[24px] p-8 flex flex-col justify-between transition-colors duration-500 border ${
+                    plan.isBestValue
+                      ? "bg-[#1E1C18] border-gold shadow-xl shadow-gold/10 lg:scale-105"
+                      : "bg-[#1D1D1D] border-white/5 hover:border-gold/30 shadow-lg"
+                  }`}
+                >
                 {/* Best Value Badge */}
                 {plan.isBestValue && (
                   <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold text-black text-[10px] font-extrabold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-lg">
@@ -199,7 +214,8 @@ export default function SubscriptionPlans({ locale }: SubscriptionPlansProps) {
                   <Icon name="Sparkles" size={12} />
                   <span>{t.subscribeNow}</span>
                 </a>
-              </div>
+                </div>
+              </motion.div>
             );
           })}
         </div>

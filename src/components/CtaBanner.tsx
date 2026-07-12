@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "motion/react";
 import { Language } from "../types";
 import { TRANSLATIONS } from "../data";
 import Icon from "./Icon";
@@ -28,7 +29,13 @@ export default function CtaBanner({ locale }: CtaBannerProps) {
         }}
       ></div>
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.6 }}
+        className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center"
+      >
         <span className="text-xs uppercase tracking-[0.3em] text-gold font-bold">
           {locale === "ar" ? "أرقى عناية بملابسك" : "ELEVATE YOUR WARDROBE EXPERIENCE"}
         </span>
@@ -87,7 +94,7 @@ export default function CtaBanner({ locale }: CtaBannerProps) {
             </span>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

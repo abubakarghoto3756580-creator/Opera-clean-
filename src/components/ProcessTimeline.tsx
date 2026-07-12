@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "motion/react";
 import { Language } from "../types";
 import { TRANSLATIONS, PROCESS_STEPS } from "../data";
 import Icon from "./Icon";
@@ -26,7 +27,13 @@ export default function ProcessTimeline({ locale }: ProcessTimelineProps) {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto mb-20"
+        >
           <span className="text-xs uppercase tracking-[0.25em] text-gold font-bold">
             {locale === "ar" ? "آلية العمل المتقنة" : "FIVE STAGES OF COUTURE DISPATCH"}
           </span>
@@ -36,10 +43,16 @@ export default function ProcessTimeline({ locale }: ProcessTimelineProps) {
           <p className="text-gray-400 mt-4 text-sm sm:text-base font-sans">
             {t.processSubtitle}
           </p>
-        </div>
+        </motion.div>
 
         {/* Process Steps Desktop Timeline */}
-        <div className="hidden md:block relative mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="hidden md:block relative mb-16"
+        >
           {/* Progress bar background line */}
           <div className="absolute top-1/2 left-0 right-0 h-[2px] bg-white/10 -translate-y-1/2"></div>
           
@@ -90,7 +103,7 @@ export default function ProcessTimeline({ locale }: ProcessTimelineProps) {
               );
             })}
           </div>
-        </div>
+        </motion.div>
 
         {/* Dynamic Detail Card based on active step (Desktop) */}
         <div className="hidden md:block p-8 bg-[#1D1D1D] rounded-[24px] border border-gold/10 relative overflow-hidden transition-all duration-500">

@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "motion/react";
 import { Language } from "../types";
 import { TRANSLATIONS } from "../data";
 import Logo from "./Logo";
@@ -64,17 +65,31 @@ export default function Hero({ locale }: HeroProps) {
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center">
         {/* Logo display */}
-        <div className="mb-8 transition-all duration-1000 transform hover:scale-105">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          whileHover={{ scale: 1.05 }}
+          className="mb-8"
+        >
           <Logo size="lg" />
-        </div>
+        </motion.div>
 
         {/* Editorial Luxury Badge */}
-        <div className="mb-6 inline-block px-4 py-1.5 rounded-full bg-[#C6A86A]/10 border border-[#C6A86A]/30 text-[#C6A86A] text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] font-sans">
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.15 }}
+          className="mb-6 inline-block px-4 py-1.5 rounded-full bg-[#C6A86A]/10 border border-[#C6A86A]/30 text-[#C6A86A] text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] font-sans"
+        >
           {locale === "ar" ? "معايير العناية الراقية منذ ٢٠٢٢" : "Luxury Fabric Care Since 2022"}
-        </div>
+        </motion.div>
 
         {/* Headline with premium gold & white gradient, slide up transition style */}
-        <h1
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
           className="text-3xl sm:text-4xl md:text-6xl font-display font-extrabold tracking-tight text-white leading-[1.25] sm:leading-[1.15] max-w-4xl"
           style={{ textShadow: "0 4px 20px rgba(0,0,0,0.5)" }}
         >
@@ -95,15 +110,25 @@ export default function Hero({ locale }: HeroProps) {
               </span>
             </>
           )}
-        </h1>
+        </motion.h1>
 
         {/* Sub-headline */}
-        <p className="mt-8 text-sm sm:text-base md:text-lg text-gray-400 max-w-2xl font-sans leading-relaxed">
+        <motion.p
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.45 }}
+          className="mt-8 text-sm sm:text-base md:text-lg text-gray-400 max-w-2xl font-sans leading-relaxed"
+        >
           {t.subTagline}
-        </p>
+        </motion.p>
 
         {/* Action CTAs */}
-        <div className="mt-12 flex flex-col sm:flex-row items-center gap-5 w-full sm:w-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
+          className="mt-12 flex flex-col sm:flex-row items-center gap-5 w-full sm:w-auto"
+        >
           {/* Primary book via WhatsApp button with custom pulse glow */}
           <a
             href="https://wa.me/96591102095"
@@ -123,10 +148,15 @@ export default function Hero({ locale }: HeroProps) {
             <span>{t.viewServices}</span>
             <Icon name={locale === "ar" ? "ChevronLeft" : "ChevronRight"} size={16} />
           </button>
-        </div>
+        </motion.div>
 
         {/* Quick features indicator */}
-        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl w-full border-t border-white/5 pt-8">
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.75 }}
+          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl w-full border-t border-white/5 pt-8"
+        >
           <div className="flex items-center justify-center gap-2 text-xs text-gray-400">
             <Icon name="CheckCircle2" className="text-gold" size={14} />
             <span>{locale === "ar" ? "توصيل لكافة المناطق" : "All Kuwait Areas"}</span>
@@ -143,7 +173,7 @@ export default function Hero({ locale }: HeroProps) {
             <Icon name="CheckCircle2" className="text-gold" size={14} />
             <span>{locale === "ar" ? "تعطير فرنسي فاخر" : "Signature Fragrance"}</span>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* Decorative luxury gradient bottom wash */}

@@ -16,7 +16,7 @@ export default function Logo({ className = "", size = "md" }: LogoProps) {
     <img
       src="/images/logo-real.png"
       alt="Opera Clean — أوبرا كلين"
-      className={`${heights[size]} w-auto select-none ${className}`}
+      className={`${heights[size]} w-auto self-start shrink-0 grow-0 select-none ${className}`}
     />
   );
 }
